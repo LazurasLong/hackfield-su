@@ -1,4 +1,4 @@
-import Default from '/Config/Default.js';
+import Default from './Config/Default.js';
 
 // load settings
 const gameConf = new Default();

@@ -1,4 +1,4 @@
-import Setting from '/Constant/Setting.js';
+import Setting from '../Constant/Setting.js';
 
 /*
  *  Default configuration class.
