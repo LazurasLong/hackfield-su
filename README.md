@@ -9,9 +9,9 @@ Used 3rd party content: Phaser 3.11 (subject to change)
 
 Clone this repo.
 
-Run `python3 -m http.server` or `php -S localhost:8000` (on Unix based systems; idk how it happens on Windows) to run a very simply HTTP server.
+Run `python -m SimpleHTTPServer 4567` or `php -S localhost:4567` (python is recommended on windows, or serve with xampp) to run a very simple HTTP server.
 
-Visit `localhost` or `127.0.0.1`.
+Visit `localhost:4567` or `127.0.0.1:4567`.
 
 Or just open `index.html` though it [isn't recommended anymore.](http://phaser.io/tutorials/getting-started)
 
