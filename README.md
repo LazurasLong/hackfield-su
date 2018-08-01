@@ -3,7 +3,10 @@
 
 Based on my Ludum Dare 27 submission from 2013.
 
-Used 3rd party content: Phaser 3.11 (subject to change)
+Used 3rd party content: 
+
+* Phaser 3.11 (will upgrade with upcoming versions)
+* Silkscreen font
 
 # How to install
 

@@ -1,15 +1,10 @@
-import Default from './Config/Default.js';
+import Bundle from './Scene/Bundle.js';
+import Create from './Scene/Create.js';
+import Preload from './Scene/Preload.js';
+import gameConf from './Config/Default.js';
 
-// load settings
-const gameConf = new Default();
-
-// assign event functions
-const preload = gameConf.legacyBallLoad;
-const create = gameConf.legacyBallBounce;
-
-gameConf
-    .modifySceneEvent('preload', preload)
-    .modifySceneEvent('create', create);
+// load: assign event functions
+gameConf.setScene(Bundle);
 
 /* global Phaser */
 const game = new Phaser.Game(gameConf.data);

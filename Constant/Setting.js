@@ -1,29 +1,20 @@
 /*
  *  Constants for various game settings.
  */
-export default class Setting
-{
+export default {
+
     /* X length of the game screen. */
-    static get GAME_WIDTH ()
-    {
-        return 1024;
-    }
+    GAME_WIDTH: 1024,
 
     /* Y length of the game screen. */
-    static get GAME_HEIGHT ()
-    {
-        return 600;
-    }
+    GAME_HEIGHT:600,
 
     /* Physics for the game. */
-    static get PHYSICS ()
+    PHYSICS:
     {
-        return {
-            default: 'arcade',
-            arcade: {
-                gravity: { y: 200 }
-            }
-        };
+        default: 'arcade',
+        arcade: {
+            gravity: { y: 200 }
+        }
     }
-
-}
+};

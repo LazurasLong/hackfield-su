@@ -1,58 +1,33 @@
+import Printer from '../Config/Printer.js';
 import Setting from '../Constant/Setting.js';
 
 /*
- *  Default configuration class.
+ *  Default configuration
  */
-export default class Default
-{
-    constructor ()
-    {
-        this.data = {
-            /* global Phaser */
-            type: Phaser.WEBGL,
-            width: Setting.GAME_WIDTH,
-            height: Setting.GAME_HEIGHT,
-            physics: Setting.PHYSICS,
-            scene: { }
-        };
-    }
+export default {
 
-    // Default alternative for "preload" function.
-    legacyBallLoad ()
-    {
-        this.load.image('logo', './Gfx/Legacy/LOGOFINAL.png');
-        this.load.image('k-ball', './Gfx/Legacy/KATAMORI.png');
-    }
-
-    // Logo demo screen.
-    legacyBallBounce ()
-    {
-        this.add.sprite(
-            Setting.GAME_WIDTH / 3,
-            Setting.GAME_HEIGHT / 3,
-            'logo'
-        );
-
+    // Phaser.Game configuration
+    data: {
         /* global Phaser */
-        this.add.text(
-            Setting.GAME_WIDTH / 3,
-            Setting.GAME_HEIGHT / 2,
-            'Pre-alpha in progress'
-        );
+        type: Phaser.WEBGL,
+        width: Setting.GAME_WIDTH,
+        height: Setting.GAME_HEIGHT,
+        physics: Setting.PHYSICS,
+        pixelArt: true,
+        scene: { }
+    },
 
+    imageData: {
+        'logo':     './Gfx/Legacy/LOGOFINAL.png',
+        'k-ball':   './Gfx/Legacy/KATAMORI.png',
+        'oldtiles': './Gfx/Legacy/TILESET.png'
+    },
 
-        var logo = this.physics.add.image(400, 100, 'k-ball');
-
-        logo.setVelocity(100, 200);
-        logo.setBounce(1, 1);
-        logo.setCollideWorldBounds(true);
-    }
-
-    // Overwrite originally supplied options.
-    modifySceneEvent (type, callable)
+    // replace scene functions, maybe even on the fly?
+    setScene: function (newScene)
     {
-        this.data.scene[type] = callable;
+        this.data.scene = newScene;
 
         return this;
     }
-}
+};
