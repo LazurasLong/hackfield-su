@@ -1,14 +1,12 @@
-import Printer from '../Config/Printer.js';
-import Setting from '../Constant/Setting.js';
-import UI from '../Constant/UI.js';
+import Keyboard from '../../Control/Keyboard.js';
+import Printer from '../../Config/Printer.js';
+import Setting from '../../Constant/Setting.js';
+import Tag from '../../Constant/UI/Tag.js';
 
 /*
     Everything dedicated to the "create" functionality.
 */
 export default {
-
-    // set in time
-    context: null,
 
     demoTilemap: function () {
         //this.cameras.main.setBounds(0, 0, 3392, 100);
@@ -51,14 +49,14 @@ export default {
         this.context.add.text(
             (Setting.GAME_WIDTH / 2) - 272,
             (Setting.GAME_HEIGHT / 4) - 64,
-            UI.TAGS.DEMO,
+            Tag.DEMO,
             Printer.defaultStyle
         );
 
         this.context.add.text(
             0,
             Setting.GAME_HEIGHT - 24,
-            UI.TAGS.MENU_SPY,
+            Tag.MENU_SPY,
             Printer.defaultStyle
         );
 
@@ -67,5 +65,8 @@ export default {
         logo.setVelocity(100, 200);
         logo.setBounce(1, 1);
         logo.setCollideWorldBounds(true);
+
+        Keyboard.context = this.context;
+        Keyboard.registerEventDemo();
     }
 };

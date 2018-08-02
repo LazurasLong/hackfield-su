@@ -2,12 +2,9 @@
 
 **hackfield -su** - an open-world cyberpunk puzzle adventure.
 
-Based on my Ludum Dare 27 submission from 2013.
+Development branch.
 
-Used 3rd party content: 
-
-* Phaser 3.11 (will upgrade with upcoming versions)
-* Silkscreen font
+Phaser: Dev Build used; currently 3.12-beta1
 
 # Development
 
@@ -22,6 +19,18 @@ A preview is available at http://katamori.github.io/hackfield-su - this one is s
 Active development happens on `dev` branch; as of yet, merges into 'master' occurs whenever I feel like it being ready for "production".
 
 In future updates, I'm going to try being much more inclined to a "prod vs dev" style of workflow, meaning that 'master' will use a self-hosted and minified version of Phaser, as well as leaving dev files (e.g. eslintrc) out.
+
+### Updates on `master`
+
+Updating the master branch starting from this one, in theory, will always cause merge conflict. This is normal.
+
+To keep things transparent, the following files should **never** be updated from dev - that is, they must keep their own version of the master branch:
+
+* README.md             Because of a different description for players and developers.
+* index.html            Because of 'phaser.min.js'
+* NO .eslintrc.json     As it's used only in dev
+
+As such, I likely won't accept PRs on 'master', unless they are important bugfixes.
 
 ## How to install
 

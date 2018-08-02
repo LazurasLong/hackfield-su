@@ -1,17 +1,14 @@
-import defaultConfig from '../Config/Default.js';
+import Default from '../../Config/Default.js';
 
 /*
     Everything dedicated to the "preload" functionality.
 */
 export default {
 
-    // set in time
-    context: null,
-
     // loads every picture from an array
     loadPictures: function ()
     {
-        var imgSet = defaultConfig.imageData;
+        var imgSet = Default.imageData;
 
         for (var k in imgSet)
         {
