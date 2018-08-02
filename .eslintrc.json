@@ -5,7 +5,7 @@
     },
     "extends": "eslint:recommended",
     "parserOptions": {
-        "ecmaVersion": 2016,
+        "ecmaVersion": 2017,
         "sourceType": "module"
     },
     "rules": {
@@ -20,7 +20,7 @@
         "block-scoped-var": "error",
         "block-spacing": "error",
         "brace-style": [
-            "error",
+            "off",
             "allman"
         ],
         "callback-return": "error",
@@ -51,7 +51,7 @@
         "eqeqeq": "error",
         "func-call-spacing": "error",
         "func-name-matching": "error",
-        "func-names": "error",
+        "func-names": "off",
         "func-style": [
             "error",
             "declaration"
@@ -63,7 +63,7 @@
         "handle-callback-err": "error",
         "id-blacklist": "error",
         "id-length": [
-            "error",
+            "off",
             {
                 "properties": "never"
             }
@@ -90,11 +90,11 @@
         "max-lines": "error",
         "max-lines-per-function": "error",
         "max-nested-callbacks": "error",
-        "max-params": "error",
-        "max-statements": "error",
+        "max-params": "off",
+        "max-statements": "off",
         "max-statements-per-line": "error",
         "multiline-comment-style": "off",
-        "multiline-ternary": "error",
+        "multiline-ternary": "off",
         "new-cap": "error",
         "new-parens": "error",
         "newline-after-var": [
@@ -103,7 +103,7 @@
         ],
         "newline-before-return": "error",
         "newline-per-chained-call": "error",
-        "no-alert": "error",
+        "no-alert": "off",
         "no-array-constructor": "error",
         "no-await-in-loop": "error",
         "no-bitwise": "error",
@@ -122,7 +122,7 @@
         "no-extend-native": "error",
         "no-extra-bind": "error",
         "no-extra-label": "error",
-        "no-extra-parens": "error",
+        "no-extra-parens": "off",
         "no-floating-decimal": "error",
         "no-implicit-coercion": "error",
         "no-implicit-globals": "off",
@@ -154,11 +154,11 @@
         "no-octal-escape": "error",
         "no-param-reassign": "error",
         "no-path-concat": "error",
-        "no-plusplus": "error",
+        "no-plusplus": "off",
         "no-process-env": "error",
         "no-process-exit": "error",
         "no-proto": "error",
-        "no-prototype-builtins": "error",
+        "no-prototype-builtins": "off",
         "no-restricted-globals": "error",
         "no-restricted-imports": "error",
         "no-restricted-modules": "error",
@@ -175,12 +175,13 @@
         "no-sync": "error",
         "no-tabs": "error",
         "no-template-curly-in-string": "error",
-        "no-ternary": "error",
+        "no-ternary": "off",
         "no-throw-literal": "error",
         "no-trailing-spaces": "error",
-        "no-undef-init": "error",
-        "no-undefined": "error",
-        "no-underscore-dangle": "error",
+        "no-undef": "warn",
+        "no-undef-init": "warn",
+        "no-undefined": "warn",
+        "no-underscore-dangle": "off",
         "no-unmodified-loop-condition": "error",
         "no-unneeded-ternary": "error",
         "no-unused-expressions": "warn",
@@ -219,7 +220,7 @@
         "prefer-reflect": "error",
         "prefer-rest-params": "error",
         "prefer-spread": "error",
-        "prefer-template": "error",
+        "prefer-template": "warn",
         "quote-props": "off",
         "quotes": [
             "error",
