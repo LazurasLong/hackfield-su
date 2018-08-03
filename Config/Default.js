@@ -12,7 +12,6 @@ export default {
         type: Phaser.WEBGL,
         width: Setting.GAME_WIDTH,
         height: Setting.GAME_HEIGHT,
-        physics: Setting.PHYSICS,
         pixelArt: true,
         scene: { }
     },

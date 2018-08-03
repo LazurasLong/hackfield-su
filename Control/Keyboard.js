@@ -7,7 +7,9 @@ export default {
     {
         const keyboard = this.context.input.keyboard;
 
-        //keyboard.addKeys('W', 'A', 'S', 'D');
+        var cursors = keyboard.createCursorKeys();
+
+        // keyboard.addKeys('W', 'A', 'S', 'D');
         keyboard.on('keydown', (event) => {
             switch (event.key) {
             case 'w':

@@ -1,17 +1,15 @@
 import UI from '../Constant/UI.js';
 
-function rand (min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-
-/*
-    Helper data related to printing texts.
-*/
+/**
+ * Helper data related to printing texts.
+ * @module Config/Printer
+ */
 export default {
-    /*
-        properties
-    */
+
+    /**
+     * properties
+     * @constant
+     */
     defaultStyle: {
         fontFamily: 'slkscre',
         fontSize: 16,
@@ -23,11 +21,12 @@ export default {
         methods
     */
 
-    /*
-        string  path
-        string  ContentType
-        int     gatewayType
-    */
+    /**
+     * @param {string} path         The path in the URL
+     * @param {number} ContentType  Regular, NPE, API, etc
+     * @param {number} gatewayType  globalnode, regular gate, etc
+     * @returns {string}            The formatted URL
+     */
     createLinkText (path, ContentType, gatewayType)
     {
         var url = UI.URL;
@@ -38,7 +37,7 @@ export default {
 
         // randomized name
         case 1:
-            gate = url.gates[gatewayType] + rand(0, 9);
+            gate = url.gates[gatewayType] + Phaser.Math.Between(0, 9);
             break;
 
         // default

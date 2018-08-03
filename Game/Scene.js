@@ -14,6 +14,7 @@ export default {
         Create.context = this;
         Update.context = this;
 
+        Preload.createTimer();
         Preload.loadPictures();
         console.log('preload done');
 
@@ -23,14 +24,28 @@ export default {
     create: function ()
     {
         Create.demoTilemap();
-        Create.legacyBallBounce();
+        Create.buildMenu();
+        Create.legacyBallMove();
 
         this.debug = this.add.text(0, 0, this.player.X);
+        this.ex = this.add.text(128, 128, 'X');
     },
 
     update: function ()
     {
         Update.refreshData();
         // don't even try console.log()-ing here...
+    },
+
+    custom: {
+        setDefault: function ()
+        {
+            var gameOptions = {
+                activeMenu: 0,          // main menu
+                activeSequence: -1      // none
+            };
+
+            this.options = gameOptions;
+        }
     }
 };

@@ -3,9 +3,10 @@ import Printer from '../../Config/Printer.js';
 import Setting from '../../Constant/Setting.js';
 import Tag from '../../Constant/UI/Tag.js';
 
-/*
-    Everything dedicated to the "create" functionality.
-*/
+/**
+ * Everything dedicated to the "create" functionality.
+ * @module Game/Scene/Create
+ */
 export default {
 
     demoTilemap: function () {
@@ -13,9 +14,11 @@ export default {
         //this.physics.world.setBounds(0, 0, 3392, 240);
         var level = [];
 
-        for (var i = 0; i < 8; i++) {
+        var x = Setting.GAME_WIDTH/2/32;
+        var y = Setting.GAME_HEIGHT/2/32;
+        for (var i = 0; i < y; i++) {
             level[i] = [];
-            for (var j = 0; j < 32; j++) {
+            for (var j = 0; j < x; j++) {
                 level[i][j] = i==0 || j==0 || i==7 || j== 31 ? 1 : 0;
             }
         }
@@ -24,15 +27,17 @@ export default {
             data: level, tileWidth: 32, tileHeight: 32
         });
         var tiles = map.addTilesetImage('oldtiles');
-        var layer = map.createStaticLayer(0, tiles, 0, 256);
-
-        var cursors = this.context.input.keyboard.createCursorKeys();
+        var layer = map.createStaticLayer(0, tiles, Setting.GAME_WIDTH/2, 0);
 
         this.context.cameras.main.setZoom(1);
     },
 
-    // Logo demo screen.
-    legacyBallBounce: function ()
+    legacyBallMove: function ()
+    {
+        this.context.logo = this.context.add.image(400, 100, 'k-ball');
+    },
+
+    buildMenu: function ()
     {
         var defaultStyle = {
             fontFamily: 'slkscre',
@@ -41,14 +46,14 @@ export default {
         };
 
         this.context.add.sprite(
-            Setting.GAME_WIDTH / 2,
-            Setting.GAME_HEIGHT / 4,
+            Setting.GAME_WIDTH / 3,
+            Setting.GAME_HEIGHT / 2,
             'logo'
         );
 
         this.context.add.text(
-            (Setting.GAME_WIDTH / 2) - 272,
-            (Setting.GAME_HEIGHT / 4) - 64,
+            (Setting.GAME_WIDTH / 3) - 272,
+            (Setting.GAME_HEIGHT / 2) - 64,
             Tag.DEMO,
             Printer.defaultStyle
         );
@@ -60,6 +65,15 @@ export default {
             Printer.defaultStyle
         );
 
+        // input
+        Keyboard.context = this.context;
+        Keyboard.registerEventDemo();
+    }
+
+    // Logo demo screen.
+    /*
+    legacyBallBounce: function ()
+    {
         var logo = this.context.physics.add.image(400, 100, 'k-ball');
 
         logo.setVelocity(100, 200);
@@ -69,4 +83,5 @@ export default {
         Keyboard.context = this.context;
         Keyboard.registerEventDemo();
     }
+    */
 };
