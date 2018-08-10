@@ -7,7 +7,7 @@ export default {
     {
         const keyboard = this.context.input.keyboard;
 
-        var cursors = keyboard.createCursorKeys();
+        let cursors = keyboard.createCursorKeys();
 
         // keyboard.addKeys('W', 'A', 'S', 'D');
         keyboard.on('keydown', (event) => {

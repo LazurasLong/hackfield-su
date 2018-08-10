@@ -1,11 +1,11 @@
 /**
  * Constants for various game settings.
  * @module Constant/Setting
-*/
+ */
 export default {
 
     /**
-     *  X length of the game screen.
+     * X length of the game screen.
      * @constant
      */
     GAME_WIDTH: 1024,

@@ -19,13 +19,15 @@ export default {
     PROGRAM: {
         'modules': [
             'contact',
-            'process',
             'memory',
-            'rss'
+            'npe',
+            'process',
+            'remote',
         ],
         'processes': [
+            'CLI',
+            'hack',
             'router',
-            'hack'
         ],
         'operations': {
             'INIT':     '-- initializing {str}.{str} --',
