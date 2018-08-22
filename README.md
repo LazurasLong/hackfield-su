@@ -4,7 +4,7 @@
 
 Development branch.
 
-Phaser: Dev Build used; currently 3.12-beta1
+Phaser: Dev Build used; currently ('18-aug-22) it's 3.12.0-beta3
 
 # Development
 
@@ -34,13 +34,19 @@ As such, I likely won't accept PRs on 'master', unless they are important bugfix
 
 ## How to install
 
-Clone this repo.
+Get Typescript 3.0.1. with `npm install` (preferably `-g` but optional) and set the root as the source. 
+
+Clone this repo. I've commited a *tsconfig* that does the build work exactly as I desire.
+
+Run `tsc` because I won't commit the build result on this branch.
 
 Run `python -m SimpleHTTPServer 4567` or `php -S localhost:4567` (python is recommended on windows, or serve with xampp) to run a very simple HTTP server.
 
 Visit `localhost:4567` or `127.0.0.1:4567`.
 
 Or just open `index.html` though it [isn't recommended anymore.](http://phaser.io/tutorials/getting-started)
+
+Feel free to customize either any of the other dev settings; to be honest, I'm glad it works at all.
 
 ### ESLint
 

@@ -1,0 +1,14 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "target": "ES2017",
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "outFile": "./start.js",
+    "sourceRoot": ".",
+    "rootDir": ".",
+    "sourceMap": true,
+    "watch": true,
+    "alwaysStrict": true
+  }
+}
