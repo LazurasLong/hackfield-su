@@ -3,3 +3,5 @@
 /package.json
 /.idea
 /.vscode
+/*.js
+/*.js.map
