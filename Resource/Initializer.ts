@@ -1,27 +1,17 @@
 /** 
  *  @author Zoltán Schmidt <zol.sch93@gmail.com>
  */
-namespace Game.DefaultScene
+namespace Resource 
 {
     /**
-     * Everything dedicated to the "preload" functionality.
+     * 
      */
-    export class Preload extends Abstract.ContextAware
+    export class Initializer extends Abstract.ContextAware
     {
-        /**
-         * 
-         */
-        public createTimer(): Preload
-        {
-            Container.timers['timer'] = this.context.time.addEvent({ delay: 10000, loop: true });
-
-            return this;
-        }
-
         /**
          * loads every picture from an array
          */
-        public loadPictures(): Preload
+        public loadPictures(): Initializer
         {
             for (var k in Config.Default.imageData)
             {

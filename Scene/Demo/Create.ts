@@ -1,7 +1,7 @@
 /** 
  *  @author Zoltán Schmidt <zol.sch93@gmail.com>
  */
-namespace Game.DefaultScene
+namespace Scene.Demo
 {
     /**
      * Everything dedicated to the "create" functionality.

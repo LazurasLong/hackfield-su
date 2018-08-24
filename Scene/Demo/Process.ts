@@ -1,20 +1,24 @@
 /** 
  *  @author Zoltán Schmidt <zol.sch93@gmail.com>
  */
-namespace Game.DefaultScene
+namespace Scene.Demo
 {
     /**
      * Customizable summary of every game logic; most importantly the processes of preload, create, update and many more.
      */
-    export class Scene extends Phaser.Scene
+    export class Process extends Phaser.Scene
     {
-        protected _preload = new Game.DefaultScene.Preload(this);
-        protected _create = new Game.DefaultScene.Create(this);
-        protected _update = new Game.DefaultScene.Update(this);
+        protected _preload = new Scene.Demo.Preload(this);
+        protected _create = new Scene.Demo.Create(this);
+        protected _update = new Scene.Demo.Update(this);
 
         public preload(): void
         {
-            this._preload.createTimer().loadPictures();
+            this._preload.createTimer();
+            
+            let initializer = new Resource.Initializer(this);
+            
+            initializer.loadPictures();
         }
 
         public create(): void

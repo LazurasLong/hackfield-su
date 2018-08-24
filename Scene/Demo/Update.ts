@@ -1,7 +1,7 @@
 /** 
  *  @author Zoltán Schmidt <zol.sch93@gmail.com>
  */
-namespace Game.DefaultScene
+namespace Scene.Demo
 {
     /**
      * Everything dedicated to the "update" functionality.
@@ -13,7 +13,7 @@ namespace Game.DefaultScene
          */
         public refreshData(): void
         {
-            let player: Player = Container.player;
+            let player: Game.Player = Container.player;
             let timerString: string = Number(Container.timers['timer'].getProgress()*10).toString().substr(0, 3);
 
             Container.texts['debug'].setText(

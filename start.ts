@@ -7,9 +7,7 @@
 
 window.onload = () => {
     let config = new Config.Default();
-    let defaultScene = new Game.DefaultScene.Scene(config.data);
-
-    config.setScene(defaultScene);
-
-    let game = new Phaser.Game(config.data);
+    let game = Scene.Controller.setScene(
+        new Phaser.Game(config.data), 
+        new Scene.Menu(config.data));
 };

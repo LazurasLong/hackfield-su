@@ -14,14 +14,15 @@ namespace Constant.UiText
         protected static _surveillanceApi: string   = Config.Printer.createLinkText('', 'API', 0); 
 
         public static DEMO: string                  = 'Welcome to \n\n\n\n\n\n\n' +
-                                                    'Press any key to return to the UI!\n' +
-                                                    '(Doesn\'t work yet, sorry; the whole thing is super ' +
-                                                    'pre-alpha.)'
+                                                    'the ultimate cyberspace hacking simulator developed by Zoltan\n' +
+                                                    '\'Katamori\' Schmidt on the 24-25th of August 2013, for Ludum\n' +
+                                                    'Dare #27 - the remake of which started exactly 5 years later on\n' +
+                                                    'the same day!'
 
         public static NO_NEW: string                = 'No new articles since you are logged in.'
         public static MORE_AT: string               = `More articles: ${Tag._umbalaChannel}`
 
-        public static MENU_SPY: string              = ' Maasren, Anthburt | MT:02:33, IC:2036:05:21 |' +
+        public static MENU_SPY: string              = ' Maasren, Anthburt |  MT:02:33, IC:2036:05:21 |' +
                                                     ` data via ${Tag._surveillanceApi}`
     }
 }

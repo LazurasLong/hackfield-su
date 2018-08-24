@@ -14,7 +14,7 @@ namespace Config
             height                      : Constant.Setting.GAME_HEIGHT,
             title                       : 'hackfield -su',
             url                         : 'https://katamori.github.io/hackfield-su',
-            version                     : '0.0.0.1',
+            version                     : '0.0.0.2',
             "render.antialias"          : false,
             "render.pixelArt"           : true,
             "render.roundPixels"        : true,
@@ -25,23 +25,11 @@ namespace Config
          * 
          */
         public static imageData: Object = {
-            'logo'      : './Gfx/Legacy/LOGOFINAL.png',
-            'k-ball'    : './Gfx/Legacy/KATAMORI.png',
-            'oldtiles'  : './Gfx/Legacy/TILESET.png',
+            'logo'      : './_gfx/Legacy/LOGOFINAL.png',
+            'k-ball'    : './_gfx/Legacy/KATAMORI.png',
+            'oldtiles'  : './_gfx/Legacy/TILESET.png',
 
-            'player'    : './Gfx/oldPlayer.png',
+            'player'    : './_gfx/oldPlayer.png',
         }
-
-        /**
-         * replace scene functions, maybe even on the fly?
-         * @param newScene 
-         */
-        public setScene (newScene: Phaser.Scene): Config.Default
-        {
-            this.data.scene = newScene;
-
-            return this;
-        }
-
     }
 }
