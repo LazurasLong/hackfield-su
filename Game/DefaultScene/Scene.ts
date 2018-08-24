@@ -1,7 +1,7 @@
 /** 
  *  @author Zoltán Schmidt <zol.sch93@gmail.com>
  */
-namespace Game 
+namespace Game.DefaultScene
 {
     /**
      * Customizable summary of every game logic; most importantly the processes of preload, create, update and many more.
@@ -14,21 +14,22 @@ namespace Game
 
         public preload(): void
         {
-            Container.player = new Game.Player();
-
-            this._preload.createTimer();
-            this._preload.loadPictures();
-            console.log('preload done');
+            this._preload.createTimer().loadPictures();
         }
 
         public create(): void
         {
-            this._create.demoTilemap();
-            this._create.buildMenu();
-            this._create.legacyBallMove();
+            this._create.demoTilemap().buildMenu();
+
+            Container.player = new Game.Player(this.add.image(0, 0, 'player'));
 
             Container.texts['debug'] = this.add.text(0, 0, Container.player.X.toString());
             Container.texts['ex'] = this.add.text(128, 128, 'X');
+
+            // input
+            let keyboard = new Control.Keyboard(this);
+
+            keyboard.registerEventDemo();
         }
 
         public update(): void

@@ -7,7 +7,7 @@
 
 window.onload = () => {
     let config = new Config.Default();
-    let defaultScene = new Game.Scene(config.data);
+    let defaultScene = new Game.DefaultScene.Scene(config.data);
 
     config.setScene(defaultScene);
 

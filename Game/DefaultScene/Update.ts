@@ -13,17 +13,27 @@ namespace Game.DefaultScene
          */
         public refreshData(): void
         {
-            let logo = Container.images['logo'];
-            let player = Container.player;
-            let timerString = Number(Container.timers['timer'].getProgress()*10).toString().substr(0, 3);
-            
+            let player: Player = Container.player;
+            let timerString: string = Number(Container.timers['timer'].getProgress()*10).toString().substr(0, 3);
+
             Container.texts['debug'].setText(
                 "Player.X \t" +player.X +
                 "\nPlayer.Y \t" +player.Y +
-                "\nTimer \t" + timerString);
+                "\nTimer \t" + timerString +
+                "\nFPS: \t");
 
-            logo.x = 512 + (player.X * 32);
-            logo.y = 0 + (player.Y * 32);
+            //keep player at tilemap
+            let tile = Constant.Setting.TILE_SIZE;
+
+            let fieldOffset = {
+                "X": Container.currentMap.getLayer(0).tilemapLayer.x + tile/2,
+                "Y": Container.currentMap.getLayer(0).tilemapLayer.y + tile/2
+            };
+
+            player.sprite.setPosition(
+                fieldOffset.X + (player.X * tile),
+                fieldOffset.Y + (player.Y * tile)
+            )
         }
     }
 }

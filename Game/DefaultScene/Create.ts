@@ -11,45 +11,43 @@ namespace Game.DefaultScene
         /**
          * 
          */
-        public demoTilemap(): void
+        public demoTilemap(): Create
         {
-            this.context.cameras.main.setBounds(0, 0, 100000, 100000);
+            //this.context.cameras.main.setBounds(0, 0, 100000, 100000);
             //this.physics.world.setBounds(0, 0, 3392, 240);
-            var level = [];
+            let size = "tiny";
+            let level = Generator.Map.empty(size);
 
-            var x = Constant.Setting.GAME_WIDTH/2/32;
-            var y = Constant.Setting.GAME_HEIGHT/2/32;
-
-            for (var i = 0; i < y; i++) {
-                level[i] = [];
-                for (var j = 0; j < x; j++) {
-                    level[i][j] = i==0 || j==0 || i== y-1 || j== x-1 ? 1 : 0;
-                }
-            }
-
-            var map = this.context.make.tilemap({
-                data: level, tileWidth: 32, tileHeight: 32
+            let map = this.context.make.tilemap({
+                data: level, 
+                tileWidth: Constant.Setting.TILE_SIZE, 
+                tileHeight: Constant.Setting.TILE_SIZE
             });
             var tiles = map.addTilesetImage('oldtiles');
-            var layer = map.createStaticLayer(0, tiles, Constant.Setting.GAME_WIDTH/2, 0);
+            var layer = map.createStaticLayer(
+                0, 
+                tiles, 
+                Constant.Setting.GAME_WIDTH - (Constant.Setting.MAP_SIZE_LIMITS[size]*Constant.Setting.TILE_SIZE), 
+                0);
+
+            Container.currentMap = map;
 
             this.context.cameras.main.setZoom(1);
-        }e
 
-        /**
-         * 
-         */
-        public legacyBallMove(): void
+            return this;
+        }
+
+        public generateMap(): Create
         {
-            Container.images['logo'] = this.context.add.image(400, 100, 'k-ball');
+            return this;
         }
 
         /**
          * 
          */
-        public buildMenu(): void
+        public buildMenu(): Create
         {
-            var defaultStyle: Object = {
+            var defaultStyle: TextStyle = {
                 fontFamily: 'slkscre',
                 fontSize: 16,
                 color: '#eee'
@@ -75,10 +73,7 @@ namespace Game.DefaultScene
                 Config.Printer.defaultStyle
             );
 
-            // input
-            let keyboard = new Control.Keyboard(this.context);
-
-            keyboard.registerEventDemo();
+            return this;
         }
     }
 }

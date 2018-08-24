@@ -8,20 +8,20 @@ namespace Game.DefaultScene
      */
     export class Preload extends Abstract.ContextAware
     {
-        public context: Game.Scene;
-
         /**
          * 
          */
-        public createTimer(): void
+        public createTimer(): Preload
         {
             Container.timers['timer'] = this.context.time.addEvent({ delay: 10000, loop: true });
+
+            return this;
         }
 
         /**
          * loads every picture from an array
          */
-        public loadPictures(): void
+        public loadPictures(): Preload
         {
             for (var k in Config.Default.imageData)
             {
@@ -30,6 +30,8 @@ namespace Game.DefaultScene
                     this.context.load.image(k, Config.Default.imageData[k]);
                 }
             }
+
+            return this;
         }
     }
 }

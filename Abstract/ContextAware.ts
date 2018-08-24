@@ -8,9 +8,9 @@ namespace Abstract
      */
     export abstract class ContextAware
     {
-        public context: Game.Scene;
+        public context: Phaser.Scene;
 
-        constructor(gameScene: Game.Scene) {
+        constructor(gameScene: Phaser.Scene) {
 
             this.context = gameScene;
 

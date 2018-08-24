@@ -27,7 +27,9 @@ namespace Config
         public static imageData: Object = {
             'logo'      : './Gfx/Legacy/LOGOFINAL.png',
             'k-ball'    : './Gfx/Legacy/KATAMORI.png',
-            'oldtiles'  : './Gfx/Legacy/TILESET.png'
+            'oldtiles'  : './Gfx/Legacy/TILESET.png',
+
+            'player'    : './Gfx/oldPlayer.png',
         }
 
         /**

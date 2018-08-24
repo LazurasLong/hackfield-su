@@ -16,6 +16,11 @@ namespace Constant
         public static readonly GAME_HEIGHT: integer = 600;
 
         /**
+         * @property {integer} TILE_SIZE todo
+         */
+        public static readonly TILE_SIZE: integer = 32;
+
+        /**
          * @property {Object} MAP_SIZE_LIMITS todo
          */
         public static readonly MAP_SIZE_LIMITS: Object = {
